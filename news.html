@@ -144,6 +144,19 @@
     </div>
   </footer>
 
+	  <script>
+    document.getElementById('newsSearchInput').addEventListener('keyup', function() {
+      const filter = this.value.toLowerCase();
+      const cards = document.querySelectorAll('.news-card');
+
+      cards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        card.style.display = text.includes(filter) ? '' : 'none';
+      });
+    });
+  </script>
+
   <script src="script.js"></script>
 </body>
 </html>
+
