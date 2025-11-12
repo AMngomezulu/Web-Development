@@ -144,6 +144,19 @@
     </div>
   </footer>
 
+	  <script>
+	document.getElementById('jobSearchInput').addEventListener('keyup', function() {
+  const filter = this.value.toLowerCase();
+  const jobCards = document.querySelectorAll('.job-card');
+
+  jobCards.forEach(card => {
+    const text = card.textContent.toLowerCase();
+    card.style.display = text.includes(filter) ? '' : 'none';
+		});
+	});
+	</script>
+
   <script src="script.js"></script>
 </body>
 </html>
+
